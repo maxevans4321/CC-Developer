@@ -8,6 +8,38 @@
       "source": {
         "path": "widgets/greeting",
         "entry": "index.html"
+      },
+      "configuration": {
+        "properties": [
+          {
+            "name": "greeting_title",
+            "type": "text",
+            "label": "Heading",
+            "description": "The main heading shown on the card.",
+            "defaultValue": "Hello, Community!",
+            "rules": { "required": true, "maxLength": 80 }
+          },
+          {
+            "name": "greeting_subtitle",
+            "type": "text",
+            "label": "Subtext",
+            "description": "The smaller text below the heading.",
+            "defaultValue": "This is your first custom widget.",
+            "rules": { "maxLength": 160 }
+          },
+          {
+            "name": "card_background",
+            "type": "color",
+            "label": "Card Background",
+            "description": "Override the card background color.",
+            "defaultValue": "#ffffff"
+          }
+        ]
+      },
+      "defaultConfig": {
+        "greeting_title": "Hello, Community!",
+        "greeting_subtitle": "This is your first custom widget.",
+        "card_background": "#ffffff"
       }
     }
   ]
