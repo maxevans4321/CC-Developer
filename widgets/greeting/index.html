@@ -1,27 +1,60 @@
 <style>
-  .greeting-card {
-    font-family: var(--config--main-font-family, sans-serif);
-    padding: 24px;
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
     border-radius: 8px;
-    background: var(--config--main-color-background, #ffffff);
-    border: 1px solid var(--config--main-color-border, #e5e7eb);
-    text-align: center;
+    overflow: hidden;
   }
 
-  .greeting-card h2 {
-    color: var(--config--main-color-brand, #2563eb);
-    margin: 0 0 8px;
+  .hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .greeting-card p {
-    color: var(--config--main-color-text, #374151);
-    margin: 0;
+  .hero-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 48px;
+    box-sizing: border-box;
+  }
+
+  .slide-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    position: absolute;
+    left: 48px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .slide-text.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-text.exit {
+    opacity: 0;
+    transform: translateX(40px);
   }
 </style>
 
-<div class="greeting-card">
-  <h2 class="title">Hey there, Community!</h2>
-  <p class="subtitle">This is your first custom widget.</p>
+<div class="hero-banner">
+  <img src="banner.webp" alt="Banner" />
+  <div class="hero-text-overlay">
+    <span class="slide-text active" id="slide-1">Welcome to the Community!</span>
+    <span class="slide-text" id="slide-2">We're excited to have you here!</span>
+  </div>
 </div>
 
 <script type="module" src="app.js"></script>
