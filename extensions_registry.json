@@ -1,10 +1,10 @@
 {
   "widgets": [
     {
-      "title": "Hero Banner",
+      "title": "Max's Welcome",
       "type": "my_first_widget_greeting",
       "description": "An animated hero banner widget",
-      "category": "custom",
+      "category": "Vibecoded",
       "source": {
         "path": "widgets/greeting",
         "entry": "index.html"
